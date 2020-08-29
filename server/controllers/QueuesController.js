@@ -25,10 +25,6 @@ class QueuesController {
   static async getQueue(req, res) {
     const queueId = req.params.id;
 
-    const queueExists = queues.find((queue) => queue.id === queueId);
-
-    if (!queueExists)
-      return res.status(404).json({ message: "Queue does not exist" });
     const queueIndex = queues.findIndex((queue) => queue.id === queueId);
 
     res.status(200).json({
@@ -66,10 +62,6 @@ class QueuesController {
       return res.status(400).json({ message: error.details[0].message });
     const queueId = req.params.id;
 
-    const queueExists = queues.find((queue) => queue.id === queueId);
-
-    if (!queueExists)
-      return res.status(404).json({ message: "Queue does not exist" });
     const queueIndex = queues.findIndex((queue) => queue.id === queueId);
     queues[queueIndex].name = req.body.name;
 

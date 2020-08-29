@@ -8,11 +8,11 @@ class MessagesController {
     const queueId = req.params.qid;
     const consumerId = req.headers.consumerid;
 
+   
+    const queueIndex = queues.findIndex((queue) => queue.id === queueId);
     const queueExists = queues.find((queue) => queue.id === queueId);
-
     if (!queueExists)
       return res.status(404).json({ message: "Queue does not exist" });
-    const queueIndex = queues.findIndex((queue) => queue.id === queueId);
 
     const consumerExists = queueExists.consumers.find(
       (consumer) => consumer.id === consumerId
@@ -37,10 +37,7 @@ class MessagesController {
         message: error.details[0].message,
       });
     }
-    const queueExists = queues.find((queue) => queue.id === queueId);
-    if (!queueExists)
-      return res.status(404).json({ message: "Queue does not exist" });
-
+    
     const queueIndex = queues.findIndex((queue) => queue.id === queueId);
 
     const messageObject = {
@@ -56,26 +53,6 @@ class MessagesController {
     });
   }
 
-  // modify fields in a queue
-  static async updateQueue(req, res) {
-    const { error } = validateQueue(req.body);
-    if (error)
-      return res.status(400).json({ message: error.details[0].message });
-    const queueId = req.params.id;
-
-    const queueExists = queues.find((queue) => queue.id === queueId);
-
-    if (!queueExists)
-      return res.status(404).json({ message: "Queue does not exist" });
-    const queueIndex = queues.findIndex((queue) => queue.id === queueId);
-    queues[queueIndex].name = req.body.name;
-
-    res.status(200).json({
-      status: "success",
-      data: queues[queueIndex],
-      message: "Queue updated successfully",
-    });
-  }
 }
 
 export default MessagesController;

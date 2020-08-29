@@ -20,16 +20,7 @@ describe('Queues', () => {
         done();
       });
   });
-  it('Should return 404 for empty queues', (done) => {
-    chai.request(server)
-      .get('/api/v1/queues')
-      .send(queue)
-      .end((err, res) => {
-        expect(res.status).to.equal(404);
-        expect(res.body).to.have.property('message').equal('No queues to be displayed');
-        done();
-      });
-  });
+
   it('Should create a queue', (done) => {
     chai.request(server)
       .post('/api/v1/queues')

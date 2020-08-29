@@ -1,7 +1,7 @@
-# Diario
+# WonderQ
 [![Build Status](https://travis-ci.org/samdiano/Diario.svg?branch=develop)](https://travis-ci.org/samdiano/Diario) [![Coverage Status](https://coveralls.io/repos/github/samdiano/Diario/badge.svg?branch=develop)](https://coveralls.io/github/samdiano/Diario?branch=develop) <a href="https://codeclimate.com/github/samdiano/Diario/maintainability"><img src="https://api.codeclimate.com/v1/badges/77c46a463cdb6bb9e992/maintainability" /></a>  <a href="https://codeclimate.com/github/samdiano/Diario/test_coverage"><img src="https://api.codeclimate.com/v1/badges/77c46a463cdb6bb9e992/test_coverage" /></a>
 
-Diario is an online journal where users can pen down their thoughts and feelings.
+<!-- Diario is an online journal where users can pen down their thoughts and feelings.
 
 ## Table of Contents
 
@@ -147,4 +147,4 @@ API is documented at [https://mi-diario.herokuapp.com/api-docs](https://mi-diari
 ### Development
 You can run `npm run start:dev` in development to use [Nodemon](https://nodemon.io/)
 
-[Nodemon](https://nodemon.io/) watches for file changes and restarts your code. 
+[Nodemon](https://nodemon.io/) watches for file changes and restarts your code.  -->

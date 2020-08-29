@@ -11,6 +11,7 @@ const routes = (app) => {
   app.get("/api/v1/queues", queues.getQueues);
   app.post("/api/v1/queues", queues.addQueue);
   app.put("/api/v1/queues/:id", queues.updateQueue);
+  app.get("/api/v1/queues/:id", queues.getQueue);
 };
 
 export default routes;

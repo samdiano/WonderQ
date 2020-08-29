@@ -16,23 +16,25 @@ class QueuesController {
     });
   }
 
-  // // Get single entry
-  // static async getEntry(req, res) {
-  //   const entryId = parseInt(req.params.id, 10);
-  //   if ((Number(req.params.id) !== parseInt(req.params.id, 10)) || Math.sign(entryId) === -1) {
-  //     return res.status(401).json({ message: 'Given ID is not a number' });
-  //   }
-  //   const entry = await db.any(
-  //     'SELECT * FROM entries where id = $1 and userid =$2',
-  //     [entryId, req.user.id]
-  //   );
-  //   if (entry.length === 0) {
-  //     return res.status(404).json({
-  //       message: 'Entry does not exist'
-  //     });
-  //   }
-  //   res.status(200).json({ entry, message: 'Retrieved ONE entry' });
-  // }
+  // Get single queue
+  static async getQueue(req, res) {
+    const { error } = validateQueue(req.body);
+    if (error)
+      return res.status(400).json({ message: error.details[0].message });
+    const queueId = req.params.id;
+
+    const queueExists = queues.find((queue) => queue.id === queueId);
+
+    if (!queueExists)
+      return res.status(404).json({ message: "Queue does not exist" });
+    const queueIndex = queues.findIndex((queue) => queue.id === queueId);
+
+    res.status(200).json({
+      status: "success",
+      data: queues[queueIndex],
+      message: "Queue retirevd successfully",
+    });
+  }
 
   // Create New Queue
   static async addQueue(req, res) {
@@ -61,7 +63,7 @@ class QueuesController {
     const queueId = req.params.id;
 
     const queueExists = queues.find((queue) => queue.id === queueId);
-    
+
     if (!queueExists)
       return res.status(404).json({ message: "Queue does not exist" });
     const queueIndex = queues.findIndex((queue) => queue.id === queueId);

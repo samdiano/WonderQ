@@ -1,4 +1,5 @@
-import queues from "../controllers/QueuesController";
+import queuesController from "../controllers/QueuesController";
+import ConsumersController from "../controllers/ConsumersController";
 
 const routes = (app) => {
   app.get("/api/v1", (req, res) => {
@@ -7,11 +8,17 @@ const routes = (app) => {
       message: "Welcome to WonderQ Api v1.0.0",
     });
   });
-  // Entry routes
-  app.get("/api/v1/queues", queues.getQueues);
-  app.post("/api/v1/queues", queues.addQueue);
-  app.put("/api/v1/queues/:id", queues.updateQueue);
-  app.get("/api/v1/queues/:id", queues.getQueue);
+  // Queue routes
+  app.get("/api/v1/queues", queuesController.getQueues);
+  app.post("/api/v1/queues", queuesController.addQueue);
+  app.put("/api/v1/queues/:id", queuesController.updateQueue);
+  app.get("/api/v1/queues/:id", queuesController.getQueue);
+
+  // Consumer routes
+  app.get("/api/v1/queues/:qid/consumers", ConsumersController.getConsumers);
+  app.post("/api/v1/queues/:qid/consumers", ConsumersController.addConsumer);
+
+
 };
 
 export default routes;

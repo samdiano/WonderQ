@@ -11,11 +11,11 @@ class QueuesController {
     }
     res.status(200).json({
       status: "success",
-      data: queues.map(queue => {
+      data: queues.map((queue) => {
         return {
           id: queue.id,
-          name: queue.name
-        }
+          name: queue.name,
+        };
       }),
       message: "Retrieved All Queues",
     });
@@ -49,7 +49,7 @@ class QueuesController {
       id: queueId,
       name: req.body.name,
       consumers: [],
-      messages: []
+      messages: [],
     };
     if (error) {
       return res.status(400).json({
@@ -82,7 +82,6 @@ class QueuesController {
       message: "Queue updated successfully",
     });
   }
-
 }
 
 export default QueuesController;

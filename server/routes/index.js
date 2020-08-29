@@ -1,5 +1,6 @@
 import queuesController from "../controllers/QueuesController";
 import ConsumersController from "../controllers/ConsumersController";
+import MessagesController from "../controllers/MessagesController";
 
 const routes = (app) => {
   app.get("/api/v1", (req, res) => {
@@ -18,6 +19,9 @@ const routes = (app) => {
   app.get("/api/v1/queues/:qid/consumers", ConsumersController.getConsumers);
   app.post("/api/v1/queues/:qid/consumers", ConsumersController.addConsumer);
 
+  // Messages Routes
+  app.post("/api/v1/queues/:qid/messages", MessagesController.writeMessage);
+  app.get("/api/v1/queues/:qid/messages", MessagesController.getMessages);
 
 };
 

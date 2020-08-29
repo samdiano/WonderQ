@@ -1,15 +1,19 @@
-import queues from "../model/queues"
-import validateQueue from '../helpers/validateQueue';
-
-
+import queues from "../model/queues";
+import validateQueue from "../helpers/validateQueue";
+import { v4 as uuidv4 } from "uuid";
 class QueuesController {
   // get all queues
   static async getQueues(req, res) {
-    // const queues = await db.any('SELECT * FROM entries where userid = $1', req.user.id);
-    // if (queues.length === 0) {
-    //   return res.status(404).json({ message: 'No entries posted yet' });
-    // }
-    res.status(200).json({ queues, message: 'Retrieved All Queues' });
+    if (queues.length === 0) {
+      return res
+        .status(404)
+        .json({ data: queues, message: "No queues to be displayed" });
+    }
+    res.status(200).json({
+      status: "success",
+      data: queues,
+      message: "Retrieved All Queues",
+    });
   }
 
   // // Get single entry
@@ -30,21 +34,24 @@ class QueuesController {
   //   res.status(200).json({ entry, message: 'Retrieved ONE entry' });
   // }
 
-  // // Add entry
-  // static async addEntry(req, res) {
-  //   const { error } = validateEntry(req.body);
-  //   if (error) {
-  //     return res.status(400).json({
-  //       message: error.details[0].message
-  //     });
-  //   }
-  //   req.body.userid = req.user.id;
-  //   await db.any(
-  //     'insert into entries(userid, title, body) values(${userid}, ${title}, ${body})',
-  //     req.body
-  //   );
-  //   res.status(201).json({ message: 'Inserted one Entry' });
-  // }
+  // Create New Queue
+  static async addQueue(req, res) {
+    const { error } = validateQueue(req.body);
+    const queueId = uuidv4();
+    const queueObject = {
+      id: queueId,
+      name: req.body.name,
+    };
+    if (error) {
+      return res.status(400).json({
+        message: error.details[0].message,
+      });
+    }
+    queues.push(queueObject);
+    res
+      .status(201)
+      .json({ status: "success", message: "Queue Created", data: queueObject });
+  }
 
   // // modify fields in an entry
   // static async updateEntry(req, res) {

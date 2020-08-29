@@ -9,6 +9,7 @@ const routes = (app) => {
   });
   // Entry routes
   app.get("/api/v1/queues", queues.getQueues);
+  app.post("/api/v1/queues", queues.addQueue);
 };
 
 export default routes;

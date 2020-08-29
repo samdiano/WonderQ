@@ -1,13 +1,11 @@
 import Joi from 'joi';
 
-const validateEntry = (entry) => {
+const validateQueue = (queue) => {
   const schema = {
-    title: Joi.string().min(3).trim().required(),
-    body: Joi.string().min(3).trim().required(),
-    userid: Joi.number().min(1)
+    name: Joi.string().min(3).trim().required()
   };
-  return Joi.validate(entry, schema);
+  return Joi.validate(queue, schema);
 };
 
-export default validateEntry;
+export default validateQueue;
 

@@ -25,7 +25,10 @@ API is documented at [https://mi-diario.herokuapp.com/api-docs](https://mi-diari
 - [ExpressJs](https://expressjs.com/) - Web Application Framework
 - [Yarn](https://yarnpkg.com/) - Dependency Manager
 
-### Supporting Packages
+
+### API Documentation
+API is documented at [https://documenter.getpostman.com/view/4233105/TVCcYVV4](https://documenter.getpostman.com/view/4233105/TVCcYVV4)
+
 
 #### Linter(s)
 

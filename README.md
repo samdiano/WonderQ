@@ -23,7 +23,7 @@ API is documented at [https://mi-diario.herokuapp.com/api-docs](https://mi-diari
 
 - [NodeJS](https://nodejs.org/) - Runtime Environment
 - [ExpressJs](https://expressjs.com/) - Web Application Framework
-- [Npm](https://www.npmjs.com/) - Dependency Manager
+- [Yarn](https://yarnpkg.com/) - Dependency Manager
 
 ### Supporting Packages
 

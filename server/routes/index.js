@@ -22,6 +22,7 @@ const routes = (app) => {
   // Messages Routes
   app.post("/api/v1/queues/:qid/messages", checkQueue,  MessagesController.writeMessage);
   app.get("/api/v1/queues/:qid/messages", checkQueue, MessagesController.getMessages);
+  app.post("/api/v1/queues/:qid/messages", checkQueue, MessagesController.markMessagesProcessed);
 };
 
 export default routes;

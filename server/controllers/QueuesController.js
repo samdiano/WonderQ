@@ -43,6 +43,7 @@ class QueuesController {
       name: req.body.name,
       consumers: [],
       messages: [],
+      processing: false
     };
     if (error) {
       return res.status(400).json({

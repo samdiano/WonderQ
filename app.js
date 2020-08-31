@@ -7,6 +7,8 @@ import swaggerUi from 'swagger-ui-express';
 import YAML from 'yamljs';
 import routes from './server/routes';
 
+require('dotenv').config();
+
 const port = process.env.PORT || 9000;
 const app = express();
 

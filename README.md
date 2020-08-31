@@ -58,7 +58,7 @@ API is documented at [https://documenter.getpostman.com/view/4233105/TVCcYVV4](h
   [Diario](https://github.com/samdiano/Diario.git)
 - Run `yarn install` to install packages
 - Run `yarn dev-server` to start the server
-- Navigate to [localhost:8000](http://localhost:8000/) in browser to access the
+- Navigate to [localhost:9000](http://localhost:9000/) in browser to access the
   application
 
 ### Testing

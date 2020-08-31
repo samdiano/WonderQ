@@ -1,149 +1,85 @@
 # WonderQ
+
 [![Build Status](https://travis-ci.org/samdiano/Diario.svg?branch=develop)](https://travis-ci.org/samdiano/Diario) [![Coverage Status](https://coveralls.io/repos/github/samdiano/Diario/badge.svg?branch=develop)](https://coveralls.io/github/samdiano/Diario?branch=develop)
-<!-- Diario is an online journal where users can pen down their thoughts and feelings.
+
+Simple Queueing service exposed via REST APIs built with NodeJS and ExpressJS
 
 ## Table of Contents
 
- * [Technologies](#technologies)
- * [Features](#features)
- * [API Endpoints](#api-endpoints)
- * [Getting Started](#getting-started)
-    * [Installation](#installation)
-    * [Testing](#testing)
-    * [Development](#development)
-    
-### Pivotal Tracker
-Project is currently being built with the Project Management Tool, Pivotal Tracker.
-You can find the template at [https://www.pivotaltracker.com/n/projects/2183705](https://www.pivotaltracker.com/n/projects/2183705)
+- [Technologies](#technologies)
+- [Features](#features)
+- [API Endpoints](#api-endpoints)
+- [Getting Started](#getting-started)
+  - [Installation](#installation)
+  - [Testing](#testing)
+  - [Development](#development)
 
-### Template
-Template is hosted at [https://samdiano.github.io/Diario/UI](https://samdiano.github.io/Diario/UI)
+<!-- ### API Documentation
 
-### API Deployment
-API is deployed at [https://mi-diario.herokuapp.com/api/v1/](https://mi-diario.herokuapp.com/api/v1/)
-
-### API Documentation
 API is documented at [https://mi-diario.herokuapp.com/api-docs](https://mi-diario.herokuapp.com/api-docs)
-
-### API Endpoints
-<table>
-	<tr>
-		<th>HTTP VERB</th>
-		<th>ENDPOINT</th>
-		<th>FUNCTIONALITY</th>
-	</tr>
-	<tr>
-		<td>GET</td>
-		<td>/api/v1/entries</td> 
-		<td>Fetch all entries</td>
-	</tr>
-	<tr>
-		<td>GET</td>
-		<td>/api/v1/entries/:entryId</td> 
-		<td>Fetch a single entry</td>
-	</tr>
-	<tr>
-		<td>POST</td>
-		<td>/api/v1/entries</td> 
-		<td>Create an entry</td>
-	</tr>
-	<tr>
-		<td>PUT</td>
-		<td>/api/v1/entries/:entryId</td> 
-		<td>Modify an entry</td>
-	</tr>
-	<tr>
-		<td>DELETE</td>
-		<td>/api/v1/entries/:entryId</td> 
-		<td>Delete an entry</td>
-	</tr>
-	<tr>
-		<td>POST</td>
-		<td>/api/v1/auth/login</td> 
-		<td>Sign in auser</td>
-	</tr>
-	<tr>
-		<td>POST</td>
-		<td>/api/v1/auth/signup</td> 
-		<td>Sign up a user</td>
-	</tr>
-	<tr>
-		<td>GET</td>
-		<td>/api/v1/profile</td> 
-		<td>Get details of logged in user</td>
-	</tr>
-	<tr>
-		<td>PUT</td>
-		<td>/api/v1/profile</td> 
-		<td>Update details of logged in user</td>
-	</tr>
-	
-</table>
+ -->
 
 ## Technologies
 
-* [NodeJS](https://nodejs.org/) - Runtime Environment
-* [ExpressJs](https://expressjs.com/) - Web Application Framework
-* [Npm](https://www.npmjs.com/) - Dependency Manager
+- [NodeJS](https://nodejs.org/) - Runtime Environment
+- [ExpressJs](https://expressjs.com/) - Web Application Framework
+- [Npm](https://www.npmjs.com/) - Dependency Manager
 
 ### Supporting Packages
 
 #### Linter(s)
 
-* [ESLint](https://eslint.org/) - Linter Tool
+- [ESLint](https://eslint.org/) - Linter Tool
 
 #### Compiler
 
-* [Babel](https://eslint.org/) - Compiler for Next Generation JavaScript
+- [Babel](https://eslint.org/) - Compiler for Next Generation JavaScript
 
 #### Test Tools
 
-* [Mocha](https://mochajs.org/) - JavaScript Test Framework for API Tests
-* [Chai](http://chaijs.com/) - TDD/BDD Assertion Library for Node
-* [Istanbul(nyc)](https://istanbul.js.org/) - Code Coverage Generator
+- [Mocha](https://mochajs.org/) - JavaScript Test Framework for API Tests
+- [Chai](http://chaijs.com/) - TDD/BDD Assertion Library for Node
+- [Istanbul(nyc)](https://istanbul.js.org/) - Code Coverage Generator
 
 ## Features
 
-### Users
-* Sign Up
-* Sign In
-* Create Diary Entries
-* Modify Diary Entries
-* Delete Diary Entries
-* Set notification 
+- Producers can publish new messages to the broker
+- Consumers can poll messages
+- Consumers can process messages
 
 ## Getting Started
 
 ### Installation
 
-* git clone
+- git clone
   [Diario](https://github.com/samdiano/Diario.git)
-* Run `npm install` to install packages
-* Run `npm start` to start the server
-* Navigate to [localhost:8000](http://localhost:8000/) in browser to access the
+- Run `yarn install` to install packages
+- Run `yarn dev-server` to start the server
+- Navigate to [localhost:8000](http://localhost:8000/) in browser to access the
   application
 
 ### Testing
 
 #### Prerequisites
 
-* [Postman](https://getpostman.com/) - API Toolchain
+- [Postman](https://getpostman.com/) - API Toolchain
 
 #### Testing with Postman
 
-* After installing as shown above
-* Navigate to [localhost:8000](http://localhost:8000/) in
+- After installing as shown above
+- Navigate to [localhost:8000](http://localhost:8000/) in
   [Postman](https://getpostman.com/) to access the application
 
 #### Testing with Coverage Data
 
-* After installing as shown 
+- After installing as shown
 
-* Run `npm test`
-* It will run test and display coverage data as generated by
+- Run `yarn test`
+- It will run test and display coverage data as generated by
   Istanbul's [nyc](https://github.com/istanbuljs/nyc)
 
 ### Development
-You can run `npm run start:dev` in development to use [Nodemon](https://nodemon.io/)
 
-[Nodemon](https://nodemon.io/) watches for file changes and restarts your code.  -->
+You can run `yarn dev-server` in development to use [Nodemon](https://nodemon.io/)
+
+[Nodemon](https://nodemon.io/) watches for file changes and restarts your code. -->
